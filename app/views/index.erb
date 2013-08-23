@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Tweet Now! 2: Multi-User</h1>
+  <% if current_user %>
+    <div>
+      <p>
+        <p>Hello <%= current_user.screen_name %>  </p>
+      </p>
+
+      <form action="/tweet" id="tweet" method="post">
+        <input type="text" name="tweet_text" placeholder="What did you do 5 minutes ago">
+        <input type="text" name="delay" placeholder="Post in how many seconds?">
+        <input type="submit"  class="regular_button">
+      </form>
+      <p>
+        <button class="regular_button"><a href="/sign_out">Sign Out</a></button>
+      </p>
+    </div>
+  <% else %>
+    <button class="regular_button"><a href="/sign_in">Sign In with Twitter</a></button>
+  <% end %>
+</div>
